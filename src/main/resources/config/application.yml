@@ -4,7 +4,7 @@
 #======================================#
 
 # 产品或项目名称、软件开发公司名称
-productName: 铜梁政府
+productName: 重庆市铜梁区人民政府
 companyName: FangMao
 
 # 产品版本、版权年份
@@ -187,7 +187,7 @@ logging:
 #======================================#
 #========== System settings ===========#
 #======================================#
-
+aipPath: /api
 # 管理基础路径
 #adminPath: /a
 
@@ -332,7 +332,7 @@ logging:
 #======================================#
 
 # Shiro 相关配置
-#shiro:
+shiro:
 #
 #  #索引页路径
 #  defaultPath: ${shiro.loginUrl}
@@ -405,7 +405,9 @@ logging:
 #  innerFilter.allowIp: 127.0.0.1
 #  
 #  # URI 权限过滤器定义
-#  filterChainDefinitions: |
+  filterChainDefinitions: |
+    /home/**=anon
+    /static/**=anon
 #    /ReportServer/** = user
 #    ${adminPath}/** = user
 
