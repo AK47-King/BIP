@@ -10,7 +10,7 @@ import com.jeesite.modules.biz.baseinfo.entity.BaseInfo;
 /**
  * base_infoDAO接口
  * @author FangMao
- * @version 2019-08-21
+ * @version 2019-08-22
  */
 @MyBatisDao
 public interface BaseInfoDao extends CrudDao<BaseInfo> {

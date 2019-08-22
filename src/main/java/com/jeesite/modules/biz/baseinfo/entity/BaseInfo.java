@@ -15,10 +15,11 @@ import com.jeesite.common.mybatis.mapper.query.QueryType;
 /**
  * base_infoEntity
  * @author FangMao
- * @version 2019-08-21
+ * @version 2019-08-22
  */
 @Table(name="base_info", alias="a", columns={
 		@Column(name="id", attrName="id", label="id", isPK=true),
+		@Column(name="name", attrName="name", label="单位名称", queryType=QueryType.LIKE),
 		@Column(name="env_desc", attrName="envDesc", label="地理环境"),
 		@Column(name="population", attrName="population", label="区划人口"),
 		@Column(name="history", attrName="history", label="历史文化"),
@@ -28,13 +29,14 @@ import com.jeesite.common.mybatis.mapper.query.QueryType;
 		@Column(name="lat", attrName="lat", label="纬度"),
 		@Column(name="org", attrName="org", label="组织结构"),
 		@Column(name="area", attrName="area", label="行政划区"),
-		@Column(name="org_name", attrName="orgName", label="org_name", queryType=QueryType.LIKE),
-		@Column(name="area_name", attrName="areaName", label="area_name", queryType=QueryType.LIKE),
+		@Column(name="org_name", attrName="orgName", label="组织结构名", queryType=QueryType.LIKE),
+		@Column(name="area_name", attrName="areaName", label="行政划区名", queryType=QueryType.LIKE),
 	}, orderBy="a.id DESC"
 )
 public class BaseInfo extends DataEntity<BaseInfo> {
 	
 	private static final long serialVersionUID = 1L;
+	private String name;		// 单位名称
 	private String envDesc;		// 地理环境
 	private String population;		// 区划人口
 	private String history;		// 历史文化
@@ -44,8 +46,8 @@ public class BaseInfo extends DataEntity<BaseInfo> {
 	private Double lat;		// 纬度
 	private String org;		// 组织结构
 	private String area;		// 行政划区
-	private String orgName;		// org_name
-	private String areaName;		// area_name
+	private String orgName;		// 组织结构名
+	private String areaName;		// 行政划区名
 	private List<Travel> travelList = ListUtils.newArrayList();		// 子表列表
 	
 	public BaseInfo() {
@@ -54,6 +56,15 @@ public class BaseInfo extends DataEntity<BaseInfo> {
 
 	public BaseInfo(String id){
 		super(id);
+	}
+	
+	@Length(min=0, max=500, message="单位名称长度不能超过 500 个字符")
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
 	}
 	
 	@Length(min=0, max=2000, message="地理环境长度不能超过 2000 个字符")

@@ -6,6 +6,8 @@ package com.jeesite.modules.biz.baseinfo.web;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.jeesite.common.codec.EncodeUtils;
+import com.jeesite.common.mapper.JsonMapper;
 import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -22,10 +24,12 @@ import com.jeesite.common.web.BaseController;
 import com.jeesite.modules.biz.baseinfo.entity.BaseInfo;
 import com.jeesite.modules.biz.baseinfo.service.BaseInfoService;
 
+import java.util.Map;
+
 /**
  * base_infoController
  * @author FangMao
- * @version 2019-08-21
+ * @version 2019-08-22
  */
 @Controller
 @RequestMapping(value = "${adminPath}/baseinfo/baseInfo")
@@ -50,6 +54,17 @@ public class BaseInfoController extends BaseController {
 	public String list(BaseInfo baseInfo, Model model) {
 		model.addAttribute("baseInfo", baseInfo);
 		return "biz/baseinfo/baseInfoList";
+	}
+
+	@RequiresPermissions("baseinfo:baseInfo:view")
+	@RequestMapping(value = "baseInfoSelect")
+	public String baseInforSelect(BaseInfo baseInfo, String selectData, Model model) {
+		String selectDataJson = EncodeUtils.decodeUrl(selectData);
+		if (JsonMapper.fromJson(selectDataJson, Map.class) != null){
+			model.addAttribute("selectData", selectDataJson);
+		}
+		model.addAttribute("baseInfo", baseInfo);
+		return "biz/baseinfo/baseInfoSelect";
 	}
 	
 	/**

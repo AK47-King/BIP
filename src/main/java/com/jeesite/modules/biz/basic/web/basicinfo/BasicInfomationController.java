@@ -6,7 +6,6 @@ package com.jeesite.modules.biz.basic.web.basicinfo;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.jeesite.common.mybatis.mapper.query.QueryType;
 import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -20,8 +19,8 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import com.jeesite.common.config.Global;
 import com.jeesite.common.entity.Page;
 import com.jeesite.common.web.BaseController;
-import com.jeesite.modules.biz.basic.entity.basicinfo.BasicInfo;
-import com.jeesite.modules.biz.basic.service.basicinfo.BasicInfoService;
+import com.jeesite.modules.biz.basic.entity.basicinfo.BasicInfomation;
+import com.jeesite.modules.biz.basic.service.basicinfo.BasicInfomationService;
 
 /**
  * 基础信息管理Controller
@@ -30,16 +29,16 @@ import com.jeesite.modules.biz.basic.service.basicinfo.BasicInfoService;
  */
 @Controller
 @RequestMapping(value = "${adminPath}/basic/basicinfo/basicInfo")
-public class BasicInfoController extends BaseController {
+public class BasicInfomationController extends BaseController {
 
 	@Autowired
-	private BasicInfoService basicInfoService;
+	private BasicInfomationService basicInfoService;
 	
 	/**
 	 * 获取数据
 	 */
 	@ModelAttribute
-	public BasicInfo get(String id, boolean isNewRecord) {
+	public BasicInfomation get(String id, boolean isNewRecord) {
 		return basicInfoService.get(id, isNewRecord);
 	}
 	
@@ -48,7 +47,7 @@ public class BasicInfoController extends BaseController {
 	 */
 	@RequiresPermissions("basic:basicinfo:basicInfo:view")
 	@RequestMapping(value = {"list", ""})
-	public String list(BasicInfo basicInfo, Model model) {
+	public String list(BasicInfomation basicInfo, Model model) {
 		model.addAttribute("basicInfo", basicInfo);
 		return "biz/basic/basicinfo/basicInfoList";
 	}
@@ -59,20 +58,20 @@ public class BasicInfoController extends BaseController {
 	@RequiresPermissions("basic:basicinfo:basicInfo:view")
 	@RequestMapping(value = "listData")
 	@ResponseBody
-	public Page<BasicInfo> listData(BasicInfo basicInfo, HttpServletRequest request, HttpServletResponse response) {
+	public Page<BasicInfomation> listData(BasicInfomation basicInfo, HttpServletRequest request, HttpServletResponse response) {
 		basicInfo.setPage(new Page<>(request, response));
 //		basicInfo.getSqlMap().getWhere().and(basicInfo.getnam)
 //        this.sqlMap.getWhere().and(this.getIdColumnName(), QueryType.IN, ids);
-		Page<BasicInfo> page = basicInfoService.findPage(basicInfo);
+		Page<BasicInfomation> page = basicInfoService.findPage(basicInfo);
 		return page;
 	}
 
     @RequiresPermissions("basic:basicinfo:basicInfo:view")
     @RequestMapping(value = "listData_nc")
     @ResponseBody
-    public Page<BasicInfo> listData_nc(BasicInfo basicInfo, HttpServletRequest request, HttpServletResponse response) {
+    public Page<BasicInfomation> listData_nc(BasicInfomation basicInfo, HttpServletRequest request, HttpServletResponse response) {
         basicInfo.setPage(new Page<>(request, response));
-        Page<BasicInfo> page = basicInfoService.findPage(basicInfo);
+        Page<BasicInfomation> page = basicInfoService.findPage(basicInfo);
         return page;
     }
 
@@ -82,7 +81,7 @@ public class BasicInfoController extends BaseController {
 	 */
 	@RequiresPermissions("basic:basicinfo:basicInfo:view")
 	@RequestMapping(value = "form")
-	public String form(BasicInfo basicInfo, Model model) {
+	public String form(BasicInfomation basicInfo, Model model) {
 		model.addAttribute("basicInfo", basicInfo);
 		return "biz/basic/basicinfo/basicInfoForm";
 	}
@@ -93,7 +92,7 @@ public class BasicInfoController extends BaseController {
 	@RequiresPermissions("basic:basicinfo:basicInfo:edit")
 	@PostMapping(value = "save")
 	@ResponseBody
-	public String save(@Validated BasicInfo basicInfo) {
+	public String save(@Validated BasicInfomation basicInfo) {
 		basicInfoService.save(basicInfo);
 		return renderResult(Global.TRUE, text("保存基础信息成功！"));
 	}
@@ -104,7 +103,7 @@ public class BasicInfoController extends BaseController {
 	@RequiresPermissions("basic:basicinfo:basicInfo:edit")
 	@RequestMapping(value = "delete")
 	@ResponseBody
-	public String delete(BasicInfo basicInfo) {
+	public String delete(BasicInfomation basicInfo) {
 		basicInfoService.delete(basicInfo);
 		return renderResult(Global.TRUE, text("删除基础信息成功！"));
 	}

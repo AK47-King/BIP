@@ -1,18 +1,18 @@
 /**
  * Copyright (c) 2013-Now http://jeesite.com All rights reserved.
  */
-package com.jeesite.modules.biz.baseinfo.dao;
+package com.jeesite.modules.biz.leader.dao;
 
 import com.jeesite.common.dao.CrudDao;
 import com.jeesite.common.mybatis.annotation.MyBatisDao;
-import com.jeesite.modules.biz.baseinfo.entity.Travel;
+import com.jeesite.modules.biz.leader.entity.Leader;
 
 /**
- * base_infoDAO接口
+ * leaderDAO接口
  * @author FangMao
  * @version 2019-08-22
  */
 @MyBatisDao
-public interface TravelDao extends CrudDao<Travel> {
+public interface LeaderDao extends CrudDao<Leader> {
 	
 }

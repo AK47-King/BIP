@@ -19,7 +19,7 @@ import com.jeesite.modules.biz.baseinfo.dao.TravelDao;
 /**
  * base_infoService
  * @author FangMao
- * @version 2019-08-21
+ * @version 2019-08-22
  */
 @Service
 @Transactional(readOnly=true)

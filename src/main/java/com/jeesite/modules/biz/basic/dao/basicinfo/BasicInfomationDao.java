@@ -5,7 +5,7 @@ package com.jeesite.modules.biz.basic.dao.basicinfo;
 
 import com.jeesite.common.dao.CrudDao;
 import com.jeesite.common.mybatis.annotation.MyBatisDao;
-import com.jeesite.modules.biz.basic.entity.basicinfo.BasicInfo;
+import com.jeesite.modules.biz.basic.entity.basicinfo.BasicInfomation;
 
 /**
  * 基础信息管理DAO接口
@@ -13,6 +13,6 @@ import com.jeesite.modules.biz.basic.entity.basicinfo.BasicInfo;
  * @version 2019-08-17
  */
 @MyBatisDao
-public interface BasicInfoDao extends CrudDao<BasicInfo> {
+public interface BasicInfomationDao extends CrudDao<BasicInfomation> {
 	
 }

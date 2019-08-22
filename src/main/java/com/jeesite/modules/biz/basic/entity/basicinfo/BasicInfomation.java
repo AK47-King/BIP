@@ -22,17 +22,17 @@ import com.jeesite.common.mybatis.mapper.query.QueryType;
 		@Column(name="desc", attrName="desc", label="desc", queryType=QueryType.LIKE),
 	}, orderBy="a.id DESC"
 )
-public class BasicInfo extends DataEntity<BasicInfo> {
+public class BasicInfomation extends DataEntity<BasicInfomation> {
 	
 	private static final long serialVersionUID = 1L;
 	private String name;		// name
 	private String desc;		// desc
 	
-	public BasicInfo() {
+	public BasicInfomation() {
 		this(null);
 	}
 
-	public BasicInfo(String id){
+	public BasicInfomation(String id){
 		super(id);
 	}
 	

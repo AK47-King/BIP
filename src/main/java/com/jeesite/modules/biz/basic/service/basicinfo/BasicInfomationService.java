@@ -3,15 +3,13 @@
  */
 package com.jeesite.modules.biz.basic.service.basicinfo;
 
-import java.util.List;
-
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.jeesite.common.entity.Page;
 import com.jeesite.common.service.CrudService;
-import com.jeesite.modules.biz.basic.entity.basicinfo.BasicInfo;
-import com.jeesite.modules.biz.basic.dao.basicinfo.BasicInfoDao;
+import com.jeesite.modules.biz.basic.entity.basicinfo.BasicInfomation;
+import com.jeesite.modules.biz.basic.dao.basicinfo.BasicInfomationDao;
 import com.jeesite.modules.file.utils.FileUploadUtils;
 
 /**
@@ -21,7 +19,7 @@ import com.jeesite.modules.file.utils.FileUploadUtils;
  */
 @Service
 @Transactional(readOnly=true)
-public class BasicInfoService extends CrudService<BasicInfoDao, BasicInfo> {
+public class BasicInfomationService extends CrudService<BasicInfomationDao, BasicInfomation> {
 	
 	/**
 	 * 获取单条数据
@@ -29,7 +27,7 @@ public class BasicInfoService extends CrudService<BasicInfoDao, BasicInfo> {
 	 * @return
 	 */
 	@Override
-	public BasicInfo get(BasicInfo basicInfo) {
+	public BasicInfomation get(BasicInfomation basicInfo) {
 		return super.get(basicInfo);
 	}
 	
@@ -40,7 +38,7 @@ public class BasicInfoService extends CrudService<BasicInfoDao, BasicInfo> {
 	 * @return
 	 */
 	@Override
-	public Page<BasicInfo> findPage(BasicInfo basicInfo) {
+	public Page<BasicInfomation> findPage(BasicInfomation basicInfo) {
 		return super.findPage(basicInfo);
 	}
 	
@@ -50,7 +48,7 @@ public class BasicInfoService extends CrudService<BasicInfoDao, BasicInfo> {
 	 */
 	@Override
 	@Transactional(readOnly=false)
-	public void save(BasicInfo basicInfo) {
+	public void save(BasicInfomation basicInfo) {
 		super.save(basicInfo);
 		// 保存上传图片
 		FileUploadUtils.saveFileUpload(basicInfo.getId(), "basicInfo_image");
@@ -62,7 +60,7 @@ public class BasicInfoService extends CrudService<BasicInfoDao, BasicInfo> {
 	 */
 	@Override
 	@Transactional(readOnly=false)
-	public void updateStatus(BasicInfo basicInfo) {
+	public void updateStatus(BasicInfomation basicInfo) {
 		super.updateStatus(basicInfo);
 	}
 	
@@ -72,7 +70,7 @@ public class BasicInfoService extends CrudService<BasicInfoDao, BasicInfo> {
 	 */
 	@Override
 	@Transactional(readOnly=false)
-	public void delete(BasicInfo basicInfo) {
+	public void delete(BasicInfomation basicInfo) {
 		super.delete(basicInfo);
 	}
 	
