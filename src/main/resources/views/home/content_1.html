@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />  
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />  
+    <title>铜梁介绍</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+      html,
+      body {
+        min-height: 100%;
+        background: rgba(245, 245, 245, 1);
+      }
+    </style>
+    <script type="text/javascript" src="http://api.map.baidu.com/api?v=3.0&ak=AXOWnOc8xmbxguAKgw3SR21IzqljeWaF"></script>	     
+    <link rel="stylesheet" href="${ctxStatic}/css/index.min.css" />	
+  </head>
+  <body style="padding: 10px;">
+    <div class="todo-info">
+      <div class="todo-box box-left box-up">
+        <div class="box-header">领导班子成员</div>
+
+        <div id="leaderList" class="leader-list">
+          <ul class="nav nav-tabs nav-justified">
+            <li role="presentation" class="active"><a href="#" data-tab=".tab-1">区委</a></li>
+            <li role="presentation"><a href="#" data-tab=".tab-2">区人大</a></li>
+            <li role="presentation"><a href="#" data-tab=".tab-3">区政府</a></li>
+            <li role="presentation"><a href="#" data-tab=".tab-4">区政协</a></li>
+          </ul>
+          <div class="tab-1">
+            <div class="leader-item leader-main">
+              <div class="title">主要<br />领导</div>
+              <div class="photo-list">
+                <div class="photo-item">
+                  <img class="phote" src="${ctxStatic}/img/photo/01.png" />
+                  <div class="name">唐小平</div>
+                </div>
+              </div>
+            </div>
+            <div class="leader-item">
+              <div class="title">副职<br />领导</div>
+              <div class="photo-list">
+                <div class="photo-item">
+                  <img class="phote" src="${ctxStatic}/img/photo/02.png"/>
+                  <div class="name">左永祥</div>
+                </div>
+                <div class="photo-item">
+                  <img class="phote"  src="${ctxStatic}/img/photo/03.png"/>
+                  <div class="name">朱华伦</div>
+                </div>
+                <div class="photo-item">
+                  <img class="phote"  src="${ctxStatic}/img/photo/04.png"/>
+                  <div class="name">廖强</div>
+                </div>
+                <div class="photo-item">
+                  <img class="phote"  src="${ctxStatic}/img/photo/05.png"/>
+                  <div class="name">钟伟</div>
+                </div>
+                <div class="photo-item">
+                  <img class="phote"  src="${ctxStatic}/img/photo/06.png"/>
+                  <div class="name">何建伟</div>
+                </div>
+                <div class="photo-item">
+                  <img class="phote"  src="${ctxStatic}/img/photo/07.png"/>
+                  <div class="name">陈益国</div>
+                </div>
+                <div class="photo-item">
+                  <img class="phote"  src="${ctxStatic}/img/photo/08.png"/>
+                  <div class="name">胡华超</div>
+                </div>
+                <div class="photo-item">
+                  <img class="phote"  src="${ctxStatic}/img/photo/09.png"/>
+                  <div class="name">屈锐</div>
+                </div>
+                <div class="photo-item">
+                  <img class="phote"  src="${ctxStatic}/img/photo/0x.png"/>
+                  <div class="name">张波</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="tab-2" style="display: none;">
+              <div class="leader-item leader-main">
+                <div class="title">主要<br />领导</div>
+                <div class="photo-list">
+                  <div class="photo-item">
+                    <img class="phote" />
+                    <div class="name">XXX</div>
+                  </div>
+                </div>
+              </div>
+              <div class="leader-item">
+                <div class="title">副职<br />领导</div>
+                <div class="photo-list">
+                  <div class="photo-item">
+                    <img class="phote" />
+                    <div class="name">XXX</div>
+                  </div>
+                  <div class="photo-item">
+                    <img class="phote" />
+                    <div class="name">XXX</div>
+                  </div>
+                  <div class="photo-item">
+                    <img class="phote" />
+                    <div class="name">XXX</div>
+                  </div>
+                  <div class="photo-item">
+                    <img class="phote" />
+                    <div class="name">XXX</div>
+                  </div>
+                  <div class="photo-item">
+                    <img class="phote" />
+                    <div class="name">XXX</div>
+                  </div>
+                  <div class="photo-item">
+                    <img class="phote" />
+                    <div class="name">XXX</div>
+                  </div>
+                  <div class="photo-item">
+                    <img class="phote" />
+                    <div class="name">XXX</div>
+                  </div>
+                  <div class="photo-item">
+                    <img class="phote" />
+                    <div class="name">XXX</div>
+                  </div>
+                  <div class="photo-item">
+                    <img class="phote" />
+                    <div class="name">XXX</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="tab-3" style="display: none;">
+                <div class="leader-item leader-main">
+                  <div class="title">主要<br />领导</div>
+                  <div class="photo-list">
+                    <div class="photo-item">
+                      <img class="phote" />
+                      <div class="name">XXX</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="leader-item">
+                  <div class="title">副职<br />领导</div>
+                  <div class="photo-list">
+                    <div class="photo-item">
+                      <img class="phote" />
+                      <div class="name">XXX</div>
+                    </div>
+                    <div class="photo-item">
+                      <img class="phote" />
+                      <div class="name">XXX</div>
+                    </div>
+                    <div class="photo-item">
+                      <img class="phote" />
+                      <div class="name">XXX</div>
+                    </div>
+                    <div class="photo-item">
+                      <img class="phote" />
+                      <div class="name">XXX</div>
+                    </div>
+                    <div class="photo-item">
+                      <img class="phote" />
+                      <div class="name">XXX</div>
+                    </div>
+                    <div class="photo-item">
+                      <img class="phote" />
+                      <div class="name">XXX</div>
+                    </div>
+                    <div class="photo-item">
+                      <img class="phote" />
+                      <div class="name">XXX</div>
+                    </div>
+                    <div class="photo-item">
+                      <img class="phote" />
+                      <div class="name">XXX</div>
+                    </div>
+                    <div class="photo-item">
+                      <img class="phote" />
+                      <div class="name">XXX</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="tab-4" style="display: none;">
+                  <div class="leader-item leader-main">
+                    <div class="title">主要<br />领导</div>
+                    <div class="photo-list">
+                      <div class="photo-item">
+                        <img class="phote" />
+                        <div class="name">XXX</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="leader-item">
+                    <div class="title">副职<br />领导</div>
+                    <div class="photo-list">
+                      <div class="photo-item">
+                        <img class="phote" />
+                        <div class="name">XXX</div>
+                      </div>
+                      <div class="photo-item">
+                        <img class="phote" />
+                        <div class="name">XXX</div>
+                      </div>
+                      <div class="photo-item">
+                        <img class="phote" />
+                        <div class="name">XXX</div>
+                      </div>
+                      <div class="photo-item">
+                        <img class="phote" />
+                        <div class="name">XXX</div>
+                      </div>
+                      <div class="photo-item">
+                        <img class="phote" />
+                        <div class="name">XXX</div>
+                      </div>
+                      <div class="photo-item">
+                        <img class="phote" />
+                        <div class="name">XXX</div>
+                      </div>
+                      <div class="photo-item">
+                        <img class="phote" />
+                        <div class="name">XXX</div>
+                      </div>
+                      <div class="photo-item">
+                        <img class="phote" />
+                        <div class="name">XXX</div>
+                      </div>
+                      <div class="photo-item">
+                        <img class="phote" />
+                        <div class="name">XXX</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+        </div>
+      </div>
+
+      <div class="todo-box box-right box-up">
+        <div class="box-header">区情简介</div>
+        <div id="areaInfo" class="area-info">
+          <div class="area-list tab-1">
+            <div class="area-item">
+              <div class="title">地理环境</div>
+              <img src="${ctxStatic}/img/tmp/1.png" />
+              <div class="detail">
+                <div>铜梁区位于长江上游，重庆西北部，地处东经105°46′22″至106°16′40″、北纬29°31′10″至30°5′55″之间。西南靠大足区，西北邻潼南区，东北连合川区，东南毗邻璧山区，南面接永川区；南北长约62千米，东西宽约48千米，区域面积1340.47平方千米，是中国人民志愿军特等功臣邱少云的故乡和铜梁龙灯的发祥地。</div>
+              </div>
+            </div>
+            <div class="area-item">
+              <div class="title">旅游指南</div>
+              <img src="${ctxStatic}/img/tmp/2.png" />
+              <div class="detail">
+                <div>自然人文景观有63处，其中：一级景观5处、二级景观22处、三级景观24处，四级景点12处。自然景观主要有：黄桷门、天灯石、飞来石、棋盘石、玉兔石、龟背石、乳峰石、手爬岩、石老虎及仰天窝、通天河、安溪竹海等；人文景观主要有：距今21500年前的旧石器文化遗址和巴岳寺、慧光寺、玄天宫、罗睺寺等。</div>
+              </div>
+            </div>
+            <div class="area-item">
+              <div class="title">区划人口</div>
+              <img src="${ctxStatic}/img/tmp/3.png" />
+              <div class="detail">
+                <div>铜梁区由巴川、东城、南城、蒲吕、旧县5个街道及23个镇组成，辖266个村与67个社区，4050个村民小组与552个居民小组。</div>
+                <div>2017年末，全区常住人口72.54万人。其中，城镇常住人口39.75万人，农村常住人口32.79万人。城镇化率54.8%，比上年提高1.71个百分点。</div>
+              </div>
+            </div>
+            <div class="area-item">
+              <div class="title">历史文化</div>
+              <img src="${ctxStatic}/img/tmp/4.png" />
+              <div class="detail">
+                <div>铜梁人文历史久远，城西张二塘是距今21500年±310年前的古人类活动遗址，被中国科学院命名为“铜梁文化”。</div>
+                <div>铜梁文化底蕴深厚	</div>
+                <div>铜梁区历史悠久，始建县距今1310多年。</div>
+                <div>自改革开放以来，铜梁先后获得不少国家级荣誉称号。</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="area-list tab-2" style="display: none;">第2页</div>
+          <div class="area-list tab-3" style="display: none;">第3页</div>
+          <div class="area-list tab-4" style="display: none;">第4页</div>
+
+          <div class="pagin-nav">
+            <ul class="pagination">
+              <li class="active"  data-tab=".tab-1"></li>
+              <li  data-tab=".tab-2"></li>
+              <li  data-tab=".tab-3"></li>
+              <li  data-tab=".tab-4"></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="todo-box box-left box-down">
+        <div class="box-header">旅游导航</div>
+        <div class="travel-nav">
+          <a href="#">黄桷门</a>
+          <a href="#">天灯石</a>
+          <a href="#">飞来石</a>
+          <a href="#">棋盘石</a>
+          <a href="#">玉兔石</a>
+          <a href="#">乳峰石</a>
+          <a href="#">手爬岩</a>
+          <a href="#">石老虎及仰天窝</a>
+          <a href="#">通天河</a>
+          <a href="#">旧石器文化遗址</a>
+          <a href="#">巴岳寺</a>
+          <a href="#">慧光寺</a>
+          <a href="#">玄天宫</a>
+          <a href="#">明月寺</a>
+          <a href="#">玉皇观</a>
+          <a href="#">波仑寺</a>
+          <a href="#">燃灯寺和青龙洞</a>
+          <a href="#">康龙洞</a>
+          <a href="#">罗喉寺</a>
+          <a href="#">安溪竹海</a>
+          <a href="#">龟背石</a>
+        </div>
+      </div>
+
+      <div class="todo-box box-right box-down">
+        <div class="box-header">地图定位</div>
+        <div class="todo-map" id="allmap"></div>
+	    
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+    <!-- 加载 Bootstrap 的所有 JavaScript 插件。你也可以根据需要只加载单个插件。 -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js"></script>
+    <script>
+      $(function(){
+        var $leaderList = $('#leaderList');
+        $leaderList.on('click','.nav a', function(){
+          $leaderList.find('.nav li').removeClass('active');
+          $(this).parent().addClass('active')
+          var tab = $(this).data('tab')
+          $leaderList.find('>div').hide();
+          $leaderList.find(tab).show();
+        });
+
+        var $areaInfo = $('#areaInfo');
+        $areaInfo.on('click','.pagination li', function(){
+          $areaInfo.find('.pagination li').removeClass('active');
+          $(this).addClass('active')
+          var tab = $(this).data('tab')
+          $areaInfo.find('.area-list').hide();
+          $areaInfo.find(tab).show();
+        });
+      })
+    </script>
+
+  </body>
+</html>
+<script type="text/javascript"> 
+	// 百度地图API功能
+	var map = new BMap.Map("allmap");    // 创建Map实例
+	map.centerAndZoom(new BMap.Point( 106.062447,29.851262), 15); 
+	map.enableScrollWheelZoom();
+
+	function getBoundary(){       
+		var bdary = new BMap.Boundary();
+		bdary.get("重庆市铜梁区", function(rs){       //获取行政区域
+			map.clearOverlays();        //清除地图覆盖物       
+			var count = rs.boundaries.length; //行政区域的点有多少个
+			if (count === 0) {
+				alert('未能获取当前输入行政区域');
+				return ;
+			}
+          	var pointArray = [];
+			for (var i = 0; i < count; i++) {
+				var ply = new BMap.Polygon(rs.boundaries[i], {strokeWeight: 2, strokeColor: "#ff0000"}); //建立多边形覆盖物
+				map.addOverlay(ply);  //添加覆盖物
+				pointArray = pointArray.concat(ply.getPath());
+			}    
+			map.setViewport(pointArray);    //调整视野  
+			addlabel();               
+		});   
+	}
+
+	setTimeout(function(){
+		getBoundary();
+	}, 2000);
+
+	function addlabel() {
+	    var pointArray = [
+	      new BMap.Point(121.716076,23.703799),
+	      new BMap.Point(112.121885,14.570616),
+	      new BMap.Point(123.776573,25.695422)];
+	    var optsArray = [{},{},{}];
+	    var labelArray = [];
+	    var contentArray = [
+	      "台湾是中国的！",
+	      "南海是中国的！",
+	      "钓鱼岛是中国的！"];
+	    for(var i = 0;i < pointArray.length; i++) {
+	      optsArray[i].position = pointArray[i];
+	      labelArray[i] = new BMap.Label(contentArray[i],optsArray[i]);
+	      labelArray[i].setStyle({
+			color : "red",
+			fontSize : "12px",
+				 height : "20px",
+				 lineHeight : "20px",
+				 fontFamily:"微软雅黑"
+			 });
+	      map.addOverlay(labelArray[i]);
+	    }	  
+	}
+</script> 

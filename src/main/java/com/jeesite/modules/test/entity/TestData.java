@@ -3,6 +3,7 @@
  */
 package com.jeesite.modules.test.entity;
 
+import com.jeesite.common.entity.DataScope;
 import org.hibernate.validator.constraints.Length;
 import java.util.Date;
 import com.jeesite.common.mybatis.annotation.JoinTable;
@@ -67,7 +68,7 @@ public class TestData extends DataEntity<TestData> {
 	private String testAreaCode;		// 区域选择
 	private String testAreaName;		// 区域名称
 	private List<TestDataChild> testDataChildList = ListUtils.newArrayList();		// 子表列表
-	
+	DataScope d;
 	public TestData() {
 		this(null);
 	}

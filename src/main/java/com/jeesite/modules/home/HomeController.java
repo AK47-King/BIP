@@ -35,10 +35,22 @@ public class HomeController extends BaseController {
 		return "home/index";
 	}
 
-	@RequestMapping(value = "/home/content")
-	public String homeContent() {
+	@RequestMapping(value = "/home/content_1")
+	public String homeContent1() {
 		System.out.println(">>>>>>>>>>>>>>>>>HomePageContent<<<<<<<<<<<<<<<<");
-		return "home/content";
+		return "home/content_1";
+	}
+
+	@RequestMapping(value = "/home/content_2")
+	public String homeContent2() {
+		System.out.println(">>>>>>>>>>>>>>>>>HomePageContent<<<<<<<<<<<<<<<<");
+		return "home/content_2";
+	}
+
+	@RequestMapping(value = "/home/content_3")
+	public String homeContent3() {
+		System.out.println(">>>>>>>>>>>>>>>>>HomePageContent<<<<<<<<<<<<<<<<");
+		return "home/content_3";
 	}
 	
 }

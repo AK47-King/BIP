@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.jeesite.common.codec.EncodeUtils;
 import com.jeesite.common.mapper.JsonMapper;
+import com.jeesite.modules.sys.utils.UserUtils;
 import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
