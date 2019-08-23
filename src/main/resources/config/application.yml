@@ -408,6 +408,7 @@ shiro:
   filterChainDefinitions: |
     /home/**=anon
     /static/**=anon
+    /a/sys/empUser/**=anon
 #    /ReportServer/** = user
 #    ${adminPath}/** = user
 
