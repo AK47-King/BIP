@@ -4,6 +4,7 @@ package com.jeesite.modules.home;
  * Copyright (c) 2013-Now http://jeesite.com All rights reserved.
  */
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
@@ -141,15 +142,47 @@ public class UserPhoneController extends BaseController {
             map.put("name", StringUtils.getTreeNodeName(isShowCode, e.getViewCode(), name));
             map.put("title", e.getFullName());
             // 一次性后台加载用户，提高性能(推荐方法)
+            isLoadUser = true;
             if (isLoadUser != null && isLoadUser) {
                 map.put("isParent", true);
                 List<Map<String, Object>> userList;
-                userList = empUserController.treeData("u_", e.getOfficeCode(), e.getOfficeCode(),
+                userList = EmployeetreeData("u_", e.getOfficeCode(), e.getOfficeCode(),
                         companyCode, postCode, roleCode, isAll, isShowCode, ctrlPermi);
                 mapList.addAll(userList);
             }
             mapList.add(map);
         }
+        return mapList;
+    }
+
+    public List<Map<String, Object>> EmployeetreeData(String idPrefix, String pId, String officeCode, String companyCode, String postCode, String roleCode, Boolean isAll, String isShowCode, String ctrlPermi) {
+        List<Map<String, Object>> mapList = ListUtils.newArrayList();
+        EmpUser empUser = new EmpUser();
+        Employee employee = empUser.getEmployee();
+        employee.getOffice().setOfficeCode(officeCode);
+        employee.getOffice().setIsQueryChildren(false);
+        employee.getCompany().setCompanyCode(companyCode);
+        employee.getCompany().setIsQueryChildren(false);
+        employee.setPostCode(postCode);
+        empUser.setRoleCode(roleCode);
+        empUser.setStatus("0");
+        empUser.setUserType("employee");
+        if (isAll == null || !isAll || Global.isStrictMode()) {
+            this.empUserService.addDataScopeFilter(empUser, ctrlPermi);
+        }
+
+        List<EmpUser> list = this.empUserService.findList(empUser);
+
+        for(int i = 0; i < list.size(); ++i) {
+            EmpUser e = (EmpUser)list.get(i);
+            Employee ep = e.getEmployee();
+            Map<String, Object> map = MapUtils.newHashMap();
+            map.put("id", (String)StringUtils.defaultIfBlank(idPrefix, "u_") + e.getId());
+            map.put("pId", StringUtils.defaultIfBlank(pId, "0"));
+            map.put("name", StringUtils.getTreeNodeName(isShowCode, e.getLoginCode(), e.getUserName()));
+            mapList.add(map);
+        }
+
         return mapList;
     }
 
@@ -164,6 +197,22 @@ public class UserPhoneController extends BaseController {
         }
         empUser.setPage(new Page<>(request, response));
         Page<EmpUser> page = empUserService.findPage(empUser);
+        List<EmpUser> lst = page.getList();
+        for(EmpUser e : lst){
+            Employee ep = e.getEmployee();
+            List<EmployeePost> eps = this.employeeService.findEmployeePostList(ep);
+            System.out.println("employee name = " + ep.getEmpName());
+            List<String> pc = new ArrayList<>();
+            for(EmployeePost i : eps){
+                System.out.println("\t"+i.getPostCode());
+                String pn =this.postService.get(new Post(i.getPostCode())).getPostName();
+                System.out.println("\t"+pn);
+                pc.add(pn);
+            }
+            String[] r = new String[pc.size()];
+            pc.toArray(r);
+            ep.setEmployeePosts(r);
+        }
         return page;
     }
 
