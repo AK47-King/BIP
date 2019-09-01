@@ -46,18 +46,39 @@ public class HomeController extends BaseController {
 
 	@RequestMapping(value = "/home/content_1") //铜梁
 	public String homeContent1() {
-		return "home/content_1";
+		return "home/content_tong_liang";
 	}
 
 	@RequestMapping(value = "/home/content_2") // 城南街道
 	public String homeContent2() {
-		return "home/content_2";
+		return "home/content_nan_cheng";
 	}
 
 	@RequestMapping(value = "/home/content_3") // 安居镇
 	public String homeContent3() {
-		return "home/content_3";
+		return "home/content_an_ju";
 	}
+
+	@RequestMapping(value = "/home/content_hysq") // 淮远
+	public String homeContentHysq() {
+		return "home/content_huai_yuan";
+	}
+
+	@RequestMapping(value = "/home/content_jlc") // 接龙
+	public String homeContentJlc() {
+		return "home/content_jie_long";
+	}
+
+	@RequestMapping(value = "/home/content_lxc") // 龙兴
+	public String homeContentLxc() {
+		return "home/content_long_xin";
+	}
+
+	@RequestMapping(value = "/home/content_dtsq") // 大田
+	public String homeContentDtsq() {
+		return "home/content_da_tian";
+	}
+
 
 	@RequestMapping(value = "/home/dept_trans")
 	public String deptTrans() {
