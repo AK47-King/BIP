@@ -31,38 +31,42 @@ public class HomeController extends BaseController {
 
 	@RequestMapping(value = "/index")
 	public String index(HttpServletRequest request, HttpServletResponse response, Model model) {
-		System.out.println(">>>>>>>>>>>>>>>>>HomePage<<<<<<<<<<<<<<<<");
 		return "home/face";
 	}
 
 	@RequestMapping(value = "/home")
 	public String home(HttpServletRequest request, HttpServletResponse response, Model model) {
-		System.out.println(">>>>>>>>>>>>>>>>>HomePage<<<<<<<<<<<<<<<<");
 		return "home/index";
 	}
 
 	@RequestMapping(value = "/home/phone/tongliang")
 	public String phoneTL(HttpServletRequest request, HttpServletResponse response, Model model) {
-		System.out.println(">>>>>>>>>>>>>>>>>HomePage<<<<<<<<<<<<<<<<");
 		return "home/phone_booke_tong_liang";
 	}
 
-	@RequestMapping(value = "/home/content_1")
+	@RequestMapping(value = "/home/content_1") //铜梁
 	public String homeContent1() {
-		System.out.println(">>>>>>>>>>>>>>>>>HomePageContent<<<<<<<<<<<<<<<<");
 		return "home/content_1";
 	}
 
-	@RequestMapping(value = "/home/content_2")
+	@RequestMapping(value = "/home/content_2") // 城南街道
 	public String homeContent2() {
-		System.out.println(">>>>>>>>>>>>>>>>>HomePageContent<<<<<<<<<<<<<<<<");
 		return "home/content_2";
 	}
 
-	@RequestMapping(value = "/home/content_3")
+	@RequestMapping(value = "/home/content_3") // 安居镇
 	public String homeContent3() {
-		System.out.println(">>>>>>>>>>>>>>>>>HomePageContent<<<<<<<<<<<<<<<<");
 		return "home/content_3";
 	}
-	
+
+	@RequestMapping(value = "/home/dept_trans")
+	public String deptTrans() {
+		return "home/dept_trans";
+	}
+
+	@RequestMapping(value = "/home/phone_book_dept_trans")
+	public String phoneBookDeptTrans() {
+		return "home/phone_book_dept_trans";
+	}
+
 }
