@@ -41,6 +41,12 @@ public class HomeController extends BaseController {
 		return "home/index";
 	}
 
+	@RequestMapping(value = "/home/phone/tongliang")
+	public String phoneTL(HttpServletRequest request, HttpServletResponse response, Model model) {
+		System.out.println(">>>>>>>>>>>>>>>>>HomePage<<<<<<<<<<<<<<<<");
+		return "home/phone_booke_tong_liang";
+	}
+
 	@RequestMapping(value = "/home/content_1")
 	public String homeContent1() {
 		System.out.println(">>>>>>>>>>>>>>>>>HomePageContent<<<<<<<<<<<<<<<<");
