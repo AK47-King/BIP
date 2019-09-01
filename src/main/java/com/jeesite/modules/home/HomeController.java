@@ -29,6 +29,12 @@ import java.util.Map;
 @Controller
 public class HomeController extends BaseController {
 
+	@RequestMapping(value = "/index")
+	public String index(HttpServletRequest request, HttpServletResponse response, Model model) {
+		System.out.println(">>>>>>>>>>>>>>>>>HomePage<<<<<<<<<<<<<<<<");
+		return "home/face";
+	}
+
 	@RequestMapping(value = "/home")
 	public String home(HttpServletRequest request, HttpServletResponse response, Model model) {
 		System.out.println(">>>>>>>>>>>>>>>>>HomePage<<<<<<<<<<<<<<<<");
