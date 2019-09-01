@@ -1,0 +1,95 @@
+<section class="sidebar">
+	<div class="user-panel">
+		<div class="pull-left image">
+			<script>
+				$('.user-panel .img-circle').click(function(){
+					if (!$('.main-header').is(':hidden')){
+						$('.main-header').slideUp(300);
+						$('[data-toggle="push-menu"]').click();
+					}else{
+						$('.main-header').slideDown(300);
+					}
+				});
+			</script>
+		</div>
+		<div>
+
+		</div>
+	</div>
+	<%/*<!--%>
+	<form action="#" method="get" class="sidebar-form">
+		<div class="input-group">
+			<input type="text" name="q" class="form-control" placeholder="查询...">
+			<span class="input-group-btn">
+				<button type="submit" name="search" id="search-btn" class="btn btn-flat"><i
+					class="fa fa-search"></i></button>
+			</span>
+		</div>
+	</form>
+	<%-->*/%>
+	<%/*<!--%>
+	<ul class="sidebar-menu">
+		<% var menuSysCode = @ObjectUtils.toStringIgnoreNull(session.sysCode, 'default'); %>
+		<li class="header">${@DictUtils.getDictLabel('sys_menu_sys_code', menuSysCode, '')}</li>
+	</ul>
+	<%-->*/%>
+	<div id="leftMenu" data-widget="tree">
+		<% if(@Global.getConfig('sys.index.menuStyle', '1') == '1'){ %>
+		<ul class="sidebar-menu">
+			<ul class="sidebar-menu">
+				<li class="treeview menu-open"><a href="javascript:" data-href="blank" class="addTabPage" title="行政区域" data-code="1162646942489337856"><i class="fa fa-fw icon-map"></i> <span>行政区域</span>
+					<span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span></a><ul class="treeview-menu" style="display: block;">
+					<li class="treeview"><a href="javascript:" data-href="${ctx}/home/content_1" class="addTabPage" title="铜梁区" data-code="1162647314486353920">
+                        <i class="fa fa-fw icon-location-pin"></i>
+                        <span>铜梁区</span>
+						<span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span></a><ul class="treeview-menu">
+						<li class="treeview"><a href="#" data-href="" class="" title="街道" data-code="1162647475287580672">
+                            <i class="fa fa-fw icon-location-pin"></i>
+                            <span>街道</span>
+                            <span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span></a><ul class="treeview-menu">
+                                <li class="treeview"><a href="javascript:" data-href="${ctx}/home/content_2" class="addTabPage" title="巴川街道" data-code="1162647475287580672">
+                                    <i class="fa fa-fw icon-location-pin"></i>
+                                    <span>巴川街道</span>
+                                    <span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span></a><ul class="treeview-menu">
+                                        <li class="treeview"><a href="javascript:" data-href="${ctx}/home/content_hysq" class="addTabPage" title="淮远社区" data-code="1162647314486353920"><i class="fa fa-fw icon-location-pin"></i> <span>淮远社区</span></a></li>
+                                        <li class="treeview"><a href="javascript:" data-href="${ctx}/home/content_jlc" class="addTabPage" title="接龙村" data-code="1162647314486353920"><i class="fa fa-fw icon-location-pin"></i> <span>接龙村</span></a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="treeview"><a href="#" data-href="" class="" title="镇政府" data-code="1162647475287580672">
+                            <i class="fa fa-fw icon-location-pin"></i>
+                            <span>镇政府</span>
+                            <span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span></a><ul class="treeview-menu">
+                            <li class="treeview"><a href="javascript:" data-href="${ctx}/home/content_3" class="addTabPage" title="安居镇" data-code="1162647475287580672">
+                                <i class="fa fa-fw icon-location-pin"></i>
+                                <span>安居镇</span>
+                                <span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span></a><ul class="treeview-menu">
+                                <li class="treeview"><a href="javascript:" data-href="${ctx}/home/content_lxc" class="addTabPage" title="龙兴村" data-code="1162647314486353920"><i class="fa fa-fw icon-location-pin"></i> <span>龙兴村</span></a></li>
+                                <li class="treeview"><a href="javascript:" data-href="${ctx}/home/content_dtsq" class="addTabPage" title="大田社区" data-code="1162647314486353920"><i class="fa fa-fw icon-location-pin"></i> <span>大田社区</span></a></li>
+                            </ul>
+                            </li>
+                        </ul>
+                        </li>
+                        <li class="treeview"><a href="#" data-href="" class="" title="单位部门" data-code="1162647475287580672">
+                            <i class="fa fa-fw icon-location-pin"></i>
+                            <span>单位部门</span>
+                            <span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span></a><ul class="treeview-menu">
+                            <li class="treeview"><a href="javascript:" data-href="${ctx}/home/dept_trans" class="addTabPage" title="交通局" data-code="1162647314486353920"><i class="fa fa-fw icon-location-pin"></i> <span>交通局</span></a></li>
+                        </ul>
+                        </li>
+					</ul></li>
+				</ul></li>
+			</ul>
+		</ul>
+		<% } %>
+	</div>
+	<%/*<!--%>
+	<ul class="sidebar-menu">
+		<li class="header">快捷菜单</li>
+		<li><a href="#"><i class="fa fa-circle-o text-red"></i> <span>快捷菜单1</span></a></li>
+		<li><a href="#"><i class="fa fa-circle-o text-yellow"></i> <span>快捷菜单2</span></a></li>
+		<li><a href="#"><i class="fa fa-circle-o text-aqua"></i> <span>快捷菜单3</span></a></li>
+	</ul>
+	<%-->*/%>
+</section>
